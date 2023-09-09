@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://jxj8cluoma53"]
+[gd_scene load_steps=4 format=3 uid="uid://jxj8cluoma53"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_prim8"]
+[ext_resource type="FontFile" uid="uid://bw3eqnxpn0fi1" path="res://fonts/post_pixel-7.ttf" id="2_8umrc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y5l4"]
+font = ExtResource("2_8umrc")
+font_size = 49
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,36 +18,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_prim8")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="ButtonPlay" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = 37.43
-offset_right = 79.0
-offset_bottom = 68.43
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 70.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "2"
-placeholder_text = "Speed"
-clear_button_enabled = true
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -77.72
-offset_right = 35.0
-offset_bottom = -7.72
-grow_horizontal = 2
-grow_vertical = 2
 text = "Play!"
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="ButtonExit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = -285.0
+offset_right = 250.0
+offset_bottom = -135.0
+grow_horizontal = 2
+text = "Collider-Run
+Godot Edition"
+label_settings = SubResource("LabelSettings_0y5l4")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[connection signal="button_up" from="ButtonPlay" to="." method="_on_button_play_button_up"]
+[connection signal="button_up" from="ButtonExit" to="." method="_on_button_exit_button_up"]
