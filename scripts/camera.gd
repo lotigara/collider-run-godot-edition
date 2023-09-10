@@ -1,9 +1,11 @@
 extends Camera2D
 
 var player
+var move_offset = Vector2()
 
 func _ready():
-	player = $RigidBody2D
+	player = get_parent().get_node("RigidBody2D")
+	move_offset = position - player.position
 
 func _process(delta):
 	position.x = player.position.x
