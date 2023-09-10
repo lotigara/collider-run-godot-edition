@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cre0xbir3mroi"]
+[gd_scene load_steps=5 format=3 uid="uid://cre0xbir3mroi"]
 
 [ext_resource type="Texture2D" uid="uid://cngrxjoy48b5t" path="res://sprites/player.png" id="1_qrnux"]
 [ext_resource type="Script" path="res://scripts/control.gd" id="2_y62s3"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_hb3l1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4t5p0"]
 
@@ -19,3 +20,6 @@ texture = ExtResource("1_qrnux")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_4t5p0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_hb3l1")
