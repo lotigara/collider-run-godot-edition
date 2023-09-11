@@ -22,4 +22,5 @@ scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_4t5p0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(550, 330)
 script = ExtResource("3_hb3l1")

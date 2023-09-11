@@ -8,5 +8,4 @@ func _ready():
 	move_offset = position - player.position
 
 func _process(delta):
-	position.x = player.position.x
-	position.y = player.position.y
+	position = player.position + move_offset
