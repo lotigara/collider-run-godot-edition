@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cre0xbir3mroi"]
+[gd_scene load_steps=7 format=3 uid="uid://cre0xbir3mroi"]
 
 [ext_resource type="Texture2D" uid="uid://cngrxjoy48b5t" path="res://sprites/player.png" id="1_qrnux"]
 [ext_resource type="Script" path="res://scripts/control.gd" id="2_y62s3"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_hb3l1"]
+[ext_resource type="Texture2D" uid="uid://ca13mnlqjiq7k" path="res://sprites/wall.png" id="4_gf1w3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4t5p0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxdir"]
+size = Vector2(1247, 98)
 
 [node name="level_0" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(550, 330)
 scale = Vector2(0.5, 0.5)
+disable_mode = 2
 gravity_scale = 0.0
 script = ExtResource("2_y62s3")
 
@@ -24,3 +29,15 @@ shape = SubResource("CircleShape2D_4t5p0")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(550, 330)
 script = ExtResource("3_hb3l1")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(600.5, -2)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D"]
+position = Vector2(-2.5, 0)
+scale = Vector2(12.5, 1)
+texture = ExtResource("4_gf1w3")
