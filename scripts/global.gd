@@ -1,4 +1,4 @@
 extends Node
 
 var player_nickname
-var player_speed = 2
+var player_speed = 5

@@ -6,16 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://ca13mnlqjiq7k" path="res://sprites/wall.png" id="4_gf1w3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4t5p0"]
+radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxdir"]
-size = Vector2(1247, 98)
+size = Vector2(202.313, 98)
 
 [node name="level_0" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(550, 330)
 scale = Vector2(0.5, 0.5)
-disable_mode = 2
 gravity_scale = 0.0
 script = ExtResource("2_y62s3")
 
@@ -25,19 +25,118 @@ texture = ExtResource("1_qrnux")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_4t5p0")
+one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(550, 330)
 script = ExtResource("3_hb3l1")
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TopWall" type="RigidBody2D" parent="Walls"]
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(600.5, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(1200, 0)
+scale = Vector2(12.5, 1)
 shape = SubResource("RectangleShape2D_gxdir")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D"]
-position = Vector2(-2.5, 0)
+[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="DownWall" type="RigidBody2D" parent="Walls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DownWall"]
+position = Vector2(1200, 650)
 scale = Vector2(12.5, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/DownWall/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="LeftWalls" type="Node2D" parent="Walls"]
+
+[node name="LeftWall" type="RigidBody2D" parent="Walls/LeftWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall"]
+position = Vector2(-172, 129)
+rotation = -0.785398
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="LeftWall2" type="RigidBody2D" parent="Walls/LeftWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall2"]
+position = Vector2(-172, 521)
+rotation = 0.785398
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall2/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="LeftWall3" type="RigidBody2D" parent="Walls/LeftWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall3"]
+position = Vector2(-300, 325)
+rotation = 1.5708
+scale = Vector2(0.9, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall3/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="RightWalls" type="Node2D" parent="Walls"]
+position = Vector2(2400, 650)
+rotation = 3.14159
+
+[node name="RightWall" type="RigidBody2D" parent="Walls/RightWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall"]
+position = Vector2(-172, 129)
+rotation = -0.785398
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="RightWall2" type="RigidBody2D" parent="Walls/RightWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall2"]
+position = Vector2(-172, 521)
+rotation = 0.785398
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall2/CollisionShape2D"]
+scale = Vector2(2.023, 1)
+texture = ExtResource("4_gf1w3")
+
+[node name="RightWall3" type="RigidBody2D" parent="Walls/RightWalls"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall3"]
+position = Vector2(-300, 325)
+rotation = 1.5708
+scale = Vector2(0.9, 1)
+shape = SubResource("RectangleShape2D_gxdir")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall3/CollisionShape2D"]
+scale = Vector2(2.023, 1)
 texture = ExtResource("4_gf1w3")

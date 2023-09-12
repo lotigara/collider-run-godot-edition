@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var velocity = Vector2()
+var pos = Vector2()
 @onready var target = position
 
 func _ready():
@@ -14,8 +15,10 @@ func _process(delta):
 	target = get_global_mouse_position()
 	
 func _physics_process(delta):
-	velocity = position.direction_to(target) * Global.player_speed
 	look_at(target)
+#	pos = target - position
+#	velocity = pos * Global.player_speed
+	velocity = position.direction_to(target) * Global.player_speed
 	if position.distance_to(target) > 1:
 		velocity = move_and_collide(velocity)
 
