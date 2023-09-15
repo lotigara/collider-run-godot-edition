@@ -13,6 +13,20 @@ size = Vector2(202.313, 98)
 
 [node name="level_0" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+position = Vector2(585, 350)
+script = ExtResource("3_hb3l1")
+
+[node name="Button" type="Button" parent="Camera2D"]
+z_index = 1
+offset_left = -585.0
+offset_top = -320.0
+offset_right = -485.0
+offset_bottom = -220.0
+text = "Main Menu
+"
+
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(550, 330)
 scale = Vector2(0.5, 0.5)
@@ -26,19 +40,6 @@ texture = ExtResource("1_qrnux")
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_4t5p0")
 one_way_collision_margin = 0.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-z_index = 1
-position = Vector2(550, 330)
-script = ExtResource("3_hb3l1")
-
-[node name="Button" type="Button" parent="Camera2D"]
-offset_left = -1000.0
-offset_top = -500.0
-offset_right = -900.0
-offset_bottom = -400.0
-text = "Main Menu
-"
 
 [node name="Walls" type="Node2D" parent="."]
 

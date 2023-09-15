@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="collider-run-godot-edition"
+config/description="Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/bg_color=Color(0.619608, 0.756863, 0.141176, 1)
 boot_splash/image="res://sprites/player.png"
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
