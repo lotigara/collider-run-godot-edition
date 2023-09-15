@@ -19,6 +19,8 @@ position = Vector2(585, 350)
 script = ExtResource("3_hb3l1")
 
 [node name="Button" type="Button" parent="Camera2D"]
+unique_name_in_owner = true
+visible = false
 z_index = 1
 offset_left = -585.0
 offset_top = -320.0

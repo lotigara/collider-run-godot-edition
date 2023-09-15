@@ -10,3 +10,8 @@ func _on_button_play_button_up():
 
 func _on_button_exit_button_up():
 	get_tree().quit()
+
+
+func _on_check_box_button_down():
+	if $CheckBox.toggled:
+		Global.is_mobile = true

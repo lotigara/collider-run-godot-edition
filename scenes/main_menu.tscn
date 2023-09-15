@@ -61,5 +61,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = -100.0
+offset_right = -26.0
+offset_bottom = -76.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CheckBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 105.0
+offset_bottom = 26.0
+text = "Is Mobile?"
+horizontal_alignment = 2
+
 [connection signal="button_up" from="ButtonPlay" to="." method="_on_button_play_button_up"]
 [connection signal="button_up" from="ButtonExit" to="." method="_on_button_exit_button_up"]
+[connection signal="button_down" from="CheckBox" to="." method="_on_check_box_button_down"]
