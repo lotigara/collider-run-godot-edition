@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbb8p1alabxvo"]
+[gd_scene load_steps=7 format=3 uid="uid://bbb8p1alabxvo"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_ap7xd"]
 [ext_resource type="Texture2D" uid="uid://3nhrcqufmcru" path="res://sprites/empty_symbol.png" id="2_gywf7"]
 [ext_resource type="Texture2D" uid="uid://ca13mnlqjiq7k" path="res://sprites/wall.png" id="3_8tmlc"]
 [ext_resource type="FontFile" uid="uid://bw3eqnxpn0fi1" path="res://fonts/post_pixel-7.ttf" id="4_2a32o"]
+[ext_resource type="Script" path="res://scripts/gui.gd" id="4_tarmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh3m7"]
 size = Vector2(250, 250)
@@ -19,6 +20,7 @@ position = Vector2(-576, -324)
 texture_normal = ExtResource("2_gywf7")
 texture_pressed = ExtResource("3_8tmlc")
 shape = SubResource("RectangleShape2D_nh3m7")
+script = ExtResource("4_tarmk")
 
 [node name="Label" type="Label" parent="TouchScreenButton"]
 anchors_preset = 8
