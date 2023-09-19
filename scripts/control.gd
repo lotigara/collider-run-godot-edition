@@ -5,7 +5,7 @@ var velocity = Vector2()
 
 func _ready():
 	if Global.is_mobile:
-		%Button.visible = true
+		%TouchScreenButton.visible = true
 
 func _input(event):
 	if event.is_action_released("ui_cancel"):
@@ -21,5 +21,5 @@ func _physics_process(delta):
 	if position.distance_to(target) > 1:
 		velocity = move_and_collide(velocity)
 
-func _on_button_button_up():
+func _on_touch_screen_button_released():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") 
