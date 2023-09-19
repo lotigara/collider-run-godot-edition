@@ -39,3 +39,5 @@ theme_override_font_sizes/font_size = 55
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]
