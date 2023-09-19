@@ -5,7 +5,7 @@ var velocity = Vector2()
 
 func _ready():
 	if Global.is_mobile:
-		%TouchScreenButton.visible = true
+		get_parent().get_node("Camera2D/TouchScreenButton").visible = true
 
 func _input(event):
 	if event.is_action_released("ui_cancel"):

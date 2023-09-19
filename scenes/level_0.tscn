@@ -12,6 +12,7 @@ size = Vector2(202.313, 98)
 [node name="Camera2D" parent="." instance=ExtResource("1_sdo68")]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_wexn6")]
+scale = Vector2(1, 1)
 
 [node name="Walls" type="Node2D" parent="."]
 

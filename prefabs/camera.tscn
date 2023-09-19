@@ -13,7 +13,7 @@ position = Vector2(585, 350)
 script = ExtResource("1_ap7xd")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-unique_name_in_owner = true
+visible = false
 z_index = 1
 position = Vector2(-576, -324)
 texture_normal = ExtResource("2_gywf7")
