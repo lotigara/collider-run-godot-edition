@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cywenkoowxtbc"]
+
+[ext_resource type="FontFile" uid="uid://68gwy0gmfdpi" path="res://fonts/minecraft-ten-font-cyrillic.ttf" id="1_6eoqm"]
+
+[resource]
+default_font = ExtResource("1_6eoqm")
+default_font_size = 11

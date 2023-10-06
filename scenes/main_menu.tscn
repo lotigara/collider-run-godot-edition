@@ -1,11 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://jxj8cluoma53"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_prim8"]
-[ext_resource type="FontFile" uid="uid://bw3eqnxpn0fi1" path="res://fonts/post_pixel-7.ttf" id="2_8umrc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0y5l4"]
-font = ExtResource("2_8umrc")
-font_size = 49
+[ext_resource type="Texture2D" uid="uid://1slujvivknga" path="res://sprites/logo.png" id="2_hocih"]
+[ext_resource type="Theme" uid="uid://cywenkoowxtbc" path="res://themes/main_menu.tres" id="2_jlx00"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,6 +13,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_jlx00")
 script = ExtResource("1_prim8")
 
 [node name="ButtonPlay" type="Button" parent="."]
@@ -27,6 +25,7 @@ offset_left = -100.0
 offset_right = 100.0
 offset_bottom = 70.0
 grow_horizontal = 2
+theme = ExtResource("2_jlx00")
 text = "Play!"
 
 [node name="ButtonExit" type="Button" parent="."]
@@ -42,24 +41,23 @@ offset_right = 100.0
 offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_jlx00")
 text = "Exit"
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -250.0
-offset_top = -285.0
-offset_right = 250.0
-offset_bottom = -135.0
+offset_left = -280.0
+offset_top = -306.51
+offset_right = 840.0
+offset_bottom = 76.49
 grow_horizontal = 2
-text = "Collider-Run:
-Godot Edition"
-label_settings = SubResource("LabelSettings_0y5l4")
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("2_jlx00")
+texture = ExtResource("2_hocih")
+expand_mode = 2
 
 [node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 1
@@ -71,12 +69,14 @@ offset_top = -100.0
 offset_right = -26.0
 offset_bottom = -76.0
 grow_horizontal = 2
+theme = ExtResource("2_jlx00")
 
 [node name="Label" type="Label" parent="CheckBox"]
 layout_mode = 0
 offset_left = 24.0
 offset_right = 105.0
 offset_bottom = 26.0
+theme = ExtResource("2_jlx00")
 text = "Is Mobile?"
 horizontal_alignment = 2
 
