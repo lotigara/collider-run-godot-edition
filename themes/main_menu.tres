@@ -4,4 +4,5 @@
 
 [resource]
 default_font = ExtResource("1_6eoqm")
-default_font_size = 11
+default_font_size = 34
+CheckBox/font_sizes/font_size = 34

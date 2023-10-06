@@ -74,8 +74,8 @@ theme = ExtResource("2_jlx00")
 [node name="Label" type="Label" parent="CheckBox"]
 layout_mode = 0
 offset_left = 24.0
-offset_right = 105.0
-offset_bottom = 26.0
+offset_right = 255.0
+offset_bottom = 60.0
 theme = ExtResource("2_jlx00")
 text = "Is Mobile?"
 horizontal_alignment = 2
