@@ -6,5 +6,5 @@
 default_font = ExtResource("1_6eoqm")
 default_font_size = 34
 CheckBox/constants/h_separation = 34
-CheckBox/constants/outline_size = 34
+CheckBox/constants/outline_size = 0
 CheckBox/font_sizes/font_size = 34

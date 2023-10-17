@@ -59,35 +59,20 @@ theme = ExtResource("2_jlx00")
 texture = ExtResource("2_hocih")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.0
-offset_top = -98.995
-offset_right = 183.0
-offset_bottom = -36.995
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_jlx00")
-text = "Is Mobile?"
-horizontal_alignment = 2
-
-[node name="CheckBox" type="CheckBox" parent="Label"]
+[node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -12.0
-offset_right = 24.0
-offset_bottom = 12.0
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 148.0
+offset_bottom = -33.0
 grow_vertical = 2
 scale = Vector2(1.00474, 1)
 theme = ExtResource("2_jlx00")
+text = "Is Mobile?"
 
 [connection signal="button_up" from="ButtonPlay" to="." method="_on_button_play_button_up"]
 [connection signal="button_up" from="ButtonExit" to="." method="_on_button_exit_button_up"]
-[connection signal="button_down" from="Label/CheckBox" to="." method="_on_check_box_button_down"]
+[connection signal="button_down" from="CheckBox" to="." method="_on_check_box_button_down"]
