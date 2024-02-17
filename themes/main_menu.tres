@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cywenkoowxtbc"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cywenkoowxtbc"]
 
 [ext_resource type="FontFile" uid="uid://68gwy0gmfdpi" path="res://fonts/minecraft-ten-font-cyrillic.ttf" id="1_6eoqm"]
+[ext_resource type="Texture2D" uid="uid://d7ub6phg87jb" path="res://sprites/switcher_on.png" id="1_vxd3q"]
+[ext_resource type="Texture2D" uid="uid://kows0ku14wio" path="res://sprites/switcher_off.png" id="2_p1e0v"]
+[ext_resource type="Texture2D" uid="uid://cia5lre42thxy" path="res://sprites/switcher_on_-90.png" id="3_353v3"]
+[ext_resource type="Texture2D" uid="uid://gsmhwmp2mqqh" path="res://sprites/switcher_off_-90.png" id="4_c54t1"]
 
 [resource]
 default_font = ExtResource("1_6eoqm")
@@ -8,3 +12,11 @@ default_font_size = 34
 CheckBox/constants/h_separation = 34
 CheckBox/constants/outline_size = 0
 CheckBox/font_sizes/font_size = 34
+CheckBox/icons/checked = ExtResource("1_vxd3q")
+CheckBox/icons/checked_disabled = ExtResource("2_p1e0v")
+CheckBox/icons/unchecked = ExtResource("2_p1e0v")
+CheckBox/icons/unchecked_disabled = ExtResource("2_p1e0v")
+CheckButton/icons/checked = ExtResource("3_353v3")
+CheckButton/icons/checked_disabled = ExtResource("4_c54t1")
+CheckButton/icons/unchecked = ExtResource("4_c54t1")
+CheckButton/icons/unchecked_disabled = ExtResource("4_c54t1")

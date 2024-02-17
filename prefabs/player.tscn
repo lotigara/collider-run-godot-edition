@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjwqc82e6ij34"]
+[gd_scene load_steps=5 format=3 uid="uid://bjwqc82e6ij34"]
 
-[ext_resource type="Script" path="res://scripts/control.gd" id="1_884ge"]
+[ext_resource type="PhysicsMaterial" uid="uid://blyq5b72as8do" path="res://stuff/standard.phymat" id="1_fjykn"]
+[ext_resource type="Script" path="res://scripts/obstacles.gd" id="2_0bmp4"]
 [ext_resource type="Texture2D" uid="uid://cngrxjoy48b5t" path="res://sprites/player.png" id="2_62ua3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3d5e"]
@@ -9,8 +10,10 @@ radius = 9.0
 [node name="RigidBody2D" type="RigidBody2D"]
 position = Vector2(550, 330)
 scale = Vector2(0.5, 0.5)
+mass = 0.01
+physics_material_override = ExtResource("1_fjykn")
 gravity_scale = 0.0
-script = ExtResource("1_884ge")
+script = ExtResource("2_0bmp4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_62ua3")

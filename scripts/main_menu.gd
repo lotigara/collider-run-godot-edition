@@ -15,3 +15,5 @@ func _on_button_exit_button_up():
 func _on_check_box_button_down():
 	if $CheckBox.toggled:
 		Global.is_mobile = true
+	else:
+		Global.is_mobile = false

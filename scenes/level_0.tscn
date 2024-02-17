@@ -1,125 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://cre0xbir3mroi"]
+[gd_scene load_steps=6 format=3 uid="uid://cre0xbir3mroi"]
 
 [ext_resource type="PackedScene" uid="uid://bbb8p1alabxvo" path="res://prefabs/camera.tscn" id="1_sdo68"]
-[ext_resource type="Texture2D" uid="uid://ca13mnlqjiq7k" path="res://sprites/wall.png" id="4_gf1w3"]
+[ext_resource type="PackedScene" uid="uid://coqqtcvpff51a" path="res://prefabs/vert_wall.tscn" id="3_iq0ny"]
+[ext_resource type="PackedScene" uid="uid://l6645qhu5q55" path="res://prefabs/spike.tscn" id="4_ga62b"]
 [ext_resource type="PackedScene" uid="uid://bjwqc82e6ij34" path="res://prefabs/player.tscn" id="4_wexn6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxdir"]
-size = Vector2(202.313, 98)
+[ext_resource type="PackedScene" uid="uid://p77qn1ucevr5" path="res://prefabs/hor_wall.tscn" id="4_yeolp"]
 
 [node name="level_0" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [704.0]
 
-[node name="Camera2D" parent="." instance=ExtResource("1_sdo68")]
+[node name="Camera2D" parent="." groups=["camera"] instance=ExtResource("1_sdo68")]
+position = Vector2(-130, 350)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("4_wexn6")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_wexn6")]
+position = Vector2(-165, 330)
 scale = Vector2(1, 1)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="TopWall" type="RigidBody2D" parent="Walls"]
-freeze = true
+[node name="VertWall" parent="Walls" groups=["wall"] instance=ExtResource("3_iq0ny")]
+position = Vector2(-216, 330)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
-position = Vector2(1200, 0)
-scale = Vector2(12.5, 1)
-shape = SubResource("RectangleShape2D_gxdir")
+[node name="VertWall2" parent="Walls" groups=["wall"] instance=ExtResource("3_iq0ny")]
+position = Vector2(3287, 330)
+scale = Vector2(-2, -2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
+[node name="HorizontalWall" parent="Walls" groups=["wall"] instance=ExtResource("4_yeolp")]
+position = Vector2(1559, 97)
 
-[node name="DownWall" type="RigidBody2D" parent="Walls"]
-freeze = true
+[node name="HorizontalWall2" parent="Walls" groups=["wall"] instance=ExtResource("4_yeolp")]
+position = Vector2(1583, 535)
+scale = Vector2(-1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DownWall"]
-position = Vector2(1200, 650)
-scale = Vector2(12.5, 1)
-shape = SubResource("RectangleShape2D_gxdir")
+[node name="Spikes" type="Node2D" parent="."]
+position = Vector2(505, 601)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls/DownWall/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
+[node name="Spike" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(0, -66)
+scale = Vector2(0.6, 0.6)
 
-[node name="LeftWalls" type="Node2D" parent="Walls"]
-
-[node name="LeftWall" type="RigidBody2D" parent="Walls/LeftWalls"]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall"]
-position = Vector2(-172, 129)
-rotation = -0.785398
-scale = Vector2(2, 1)
-shape = SubResource("RectangleShape2D_gxdir")
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
-
-[node name="LeftWall2" type="RigidBody2D" parent="Walls/LeftWalls"]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall2"]
-position = Vector2(-172, 521)
-rotation = 0.785398
-scale = Vector2(2, 1)
-shape = SubResource("RectangleShape2D_gxdir")
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall2/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
-
-[node name="LeftWall3" type="RigidBody2D" parent="Walls/LeftWalls"]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWalls/LeftWall3"]
-position = Vector2(-300, 325)
-rotation = 1.5708
-scale = Vector2(0.9, 1)
-shape = SubResource("RectangleShape2D_gxdir")
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWalls/LeftWall3/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
-
-[node name="RightWalls" type="Node2D" parent="Walls"]
-position = Vector2(2400, 650)
+[node name="Spike2" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(200, -504)
 rotation = 3.14159
+scale = Vector2(0.6, 0.6)
 
-[node name="RightWall" type="RigidBody2D" parent="Walls/RightWalls"]
-freeze = true
+[node name="Spike3" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(400, -66)
+scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall"]
-position = Vector2(-172, 129)
-rotation = -0.785398
-scale = Vector2(2, 1)
-shape = SubResource("RectangleShape2D_gxdir")
+[node name="Spike4" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(600, -504)
+rotation = 3.14159
+scale = Vector2(0.6, 0.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
+[node name="Spike5" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(800, -66)
+scale = Vector2(0.6, 0.6)
 
-[node name="RightWall2" type="RigidBody2D" parent="Walls/RightWalls"]
-freeze = true
+[node name="Spike6" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(1000, -504)
+rotation = -3.14159
+scale = Vector2(0.6, 0.6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall2"]
-position = Vector2(-172, 521)
-rotation = 0.785398
-scale = Vector2(2, 1)
-shape = SubResource("RectangleShape2D_gxdir")
+[node name="Spike7" parent="Spikes" groups=["obstacle"] instance=ExtResource("4_ga62b")]
+position = Vector2(1200, -66)
+scale = Vector2(0.6, 0.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall2/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
-
-[node name="RightWall3" type="RigidBody2D" parent="Walls/RightWalls"]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWalls/RightWall3"]
-position = Vector2(-300, 325)
-rotation = 1.5708
-scale = Vector2(0.9, 1)
-shape = SubResource("RectangleShape2D_gxdir")
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWalls/RightWall3/CollisionShape2D"]
-scale = Vector2(2.023, 1)
-texture = ExtResource("4_gf1w3")
+[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]

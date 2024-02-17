@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://l6645qhu5q55"]
+
+[ext_resource type="Texture2D" uid="uid://3whfbeb1ba5o" path="res://sprites/spike.png" id="1_fp0jr"]
+[ext_resource type="PhysicsMaterial" uid="uid://blyq5b72as8do" path="res://stuff/standard.phymat" id="1_pclvq"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+physics_material_override = ExtResource("1_pclvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fp0jr")
+offset = Vector2(0, -125)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.0937522, 0)
+scale = Vector2(0.9975, 1)
+polygon = PackedVector2Array(-125, 0, 0, 0, 125, 0, 0, -250)
