@@ -54,6 +54,9 @@ gen-external-apklibs
 # Godot-specific ignores
 .import/
 *.import
+*.png.import
+*.svg.import
+*.ttf.import
 export.cfg
 export_presets.cfg
 
